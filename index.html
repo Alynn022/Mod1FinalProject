@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <title>Pokemon Battle</title>
+  </head>
+  <body>
+    <header>Pokemon Battle!</header>
+    <main> 
+      <section class="win-counts">
+        <section class="trainer-player">
+          <img class="trainers-img" src="assets/trainer-icon.png"></img>
+          <section>Your Wins</section>
+          <section class="your-number-of-wins">0</section>
+        </section>
+        <section class="battle-field">
+          <section class="classic-container">
+            <section class="pokeballs">
+              <img class="pokeball-img" src="assets/pokeball.png"></img>
+              <img class="pokeball-img" src="assets/pokeball.png"></img>
+            </section>  
+            <h1 class="title">Classic Version</h1>
+            <section class="view classic-home hidden">
+              <p>Squirtle > Charmander</p>
+              <p>Bulbasaur > Squirtle</p>
+              <p>Charmander > Bulbasaur</p>
+            </section>
+            <section class="view classic-game">
+              <h2>Choose your Pokemon!</h2>
+              <section>
+                <button class="squirtle">Squirtle</button>
+                <button class="bulbasaur">Bulbasaur</button>
+                <button class="charmander">Charmander</button>
+              </section> 
+            </section> 
+          </section> 
+          <section class="difficult-container">
+            <section class="masterballs">
+              <img class="masterball-img" src="assets/masterball.png"></img>
+              <img class="masterball-img" src="assets/masterball.png"></img>
+            </section> 
+            <h1 class="title">Difficult Version</h1>
+           <section class="view difficult-home hidden">
+             <p>Squirtle > Charmander & Jigglypuff</p>
+             <p>Bulbasaur > Squirtle & Pikachu</p>
+             <p>Charmander > Bulbasaur & Jigglypuff</p>
+             <p>Jigglypuff > Bulbasaur & Pikachu</p>
+             <p>Pikachu > Charmander & Squirtle</p>
+           </section> 
+           <section class="view difficult-game">
+            <h2>Choose your Pokemon!</h2>
+            <button class="squirtle">Squirtle</button>
+            <button class="bulbasaur">Bulbasaur</button>
+            <button class="charmander">Charmander</button>
+            <button class="jigglypuff">Jigglypuff</button>
+            <button class="pikachu">Pikachu</button>
+           </section> 
+          </section> 
+        </section>     
+        <section class="computer-player">
+          <img class="trainers-img" src="assets/opponent-icon.png"></img>
+          <section>Opponent Wins</section>
+          <section class="comp-number-of-wins">0</section>
+        </section>  
+      </section>
+    </main>
+  </body>
+</html>
