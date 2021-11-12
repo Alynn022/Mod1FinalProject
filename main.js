@@ -37,12 +37,14 @@ function show(element) {
 }
 
 function beginGame() {
+  randomCompInput()
   newGame = new Game('classic')
-  newGame.createPlayers('human', 'squirtle', 0)
+  newGame.createPlayers('human', 'squirtle')
   newGame.createPlayers('comp', randomInput)
   hide(classicHomeView)
   hide(difficultContainer)
   hide(classicContainer)
+  newGame.checkGameType()
 }
 
 function randomCompInput() {
