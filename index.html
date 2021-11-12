@@ -12,61 +12,79 @@
     <header>Pokemon Battle!</header>
     <main> 
       <section class="win-counts">
-        <section class="trainer-player">
+        <section class="human-player">
           <img class="trainers-img" src="assets/trainer-icon.png"></img>
           <section>Your Wins</section>
-          <section class="your-number-of-wins">0</section>
+          <section class="human-wins">0</section>
+          <button class="change-game-button hidden">Change Game?</button>
         </section>
         <section class="battle-field">
-          <section class="classic-container">
+          <section class="classic-container" id="classicContainer">
             <section class="pokeballs">
               <img class="pokeball-img" src="assets/pokeball.png"></img>
               <img class="pokeball-img" src="assets/pokeball.png"></img>
             </section>  
             <h1 class="title">Classic Version</h1>
-            <section class="view classic-home hidden">
+            <section class="view classic-home" id="classicHome">
               <p>Squirtle > Charmander</p>
               <p>Bulbasaur > Squirtle</p>
               <p>Charmander > Bulbasaur</p>
             </section>
-            <section class="view classic-game">
+            <section class="view classic-game hidden" id="classicGame">
               <h2>Choose your Pokemon!</h2>
               <section>
-                <button class="squirtle">Squirtle</button>
-                <button class="bulbasaur">Bulbasaur</button>
-                <button class="charmander">Charmander</button>
+                <form class="classic-form">
+                  <input class="squirtle" type="button" name="classicInput" value="squirtle">
+                  <!-- <label class="squirtle-label">Squirtle</label> -->
+                  <input class="bulbasaur" type="button" name="classicInput" value="bulbasaur">
+                  <!-- <label class="bulbasaur-label" for="bulbasaur">Bulbasaur</label> -->
+                  <input class="charmander" type="button" name="classicInput" value="charmander">
+                  <!-- <label class="charmander-label" for="charmander">Charmander</label> -->
+                </form> 
               </section> 
             </section> 
           </section> 
-          <section class="difficult-container">
+          <section class="difficult-container" id="difficultContainer">
             <section class="masterballs">
               <img class="masterball-img" src="assets/masterball.png"></img>
               <img class="masterball-img" src="assets/masterball.png"></img>
             </section> 
             <h1 class="title">Difficult Version</h1>
-           <section class="view difficult-home hidden">
+           <section class="view difficult-home" id="difficultHome">
              <p>Squirtle > Charmander & Jigglypuff</p>
              <p>Bulbasaur > Squirtle & Pikachu</p>
              <p>Charmander > Bulbasaur & Jigglypuff</p>
              <p>Jigglypuff > Bulbasaur & Pikachu</p>
              <p>Pikachu > Charmander & Squirtle</p>
            </section> 
-           <section class="view difficult-game">
+           <section class="view difficult-game hidden" id="difficultGame">
             <h2>Choose your Pokemon!</h2>
-            <button class="squirtle">Squirtle</button>
-            <button class="bulbasaur">Bulbasaur</button>
-            <button class="charmander">Charmander</button>
-            <button class="jigglypuff">Jigglypuff</button>
-            <button class="pikachu">Pikachu</button>
+            <section>
+              <form class="difficult-form">
+                <input class="squirtle" type="button" name="difficultInput" value="squirtle">
+                <!-- <label class="squirtle-label">Squirtle</label> -->
+                <input class="bulbasaur" type="button" name="difficultInput" value="bulbasaur">
+                <!-- <label class="bulbasaur-label">Bulbasaur</label> -->
+                <input class="charmander" type="button" name="difficultInput" value="charmander">
+                <!-- <label class="charmander-label">Charmander</label> -->
+                <input class="jigglypuff" type="button" name="difficultInput" value="jigglypuff">
+                <!-- <label class="jigglypuff-label">Jigglypuff</label> -->
+                <input class="pikachu" type="button" name="difficultInput" value="pikachu">
+                <!-- <label class="pikachu-label">Pikachu</label> -->
+              </form> 
+            </section> 
            </section> 
           </section> 
         </section>     
         <section class="computer-player">
           <img class="trainers-img" src="assets/opponent-icon.png"></img>
           <section>Opponent Wins</section>
-          <section class="comp-number-of-wins">0</section>
+          <section class="computer-wins">0</section>
         </section>  
       </section>
     </main>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

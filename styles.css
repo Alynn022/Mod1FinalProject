@@ -51,7 +51,9 @@ h2 {
 }
 
 .classic-home,
-.classic-game {
+.classic-game,
+.difficult-home,
+.difficult-game {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,13 +98,12 @@ h2 {
 }
 
 .computer-player,
-.trainer-player {
+.human-player {
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: 25px;
 }
-
 
 .squirtle, 
 .bulbasaur,
@@ -112,6 +113,11 @@ h2 {
   height: 100px;
   width: 100px;
   padding-top: 95px;
+}
+
+.classic-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .squirtle {
