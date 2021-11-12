@@ -3,16 +3,16 @@ class Game {
     this.players = [];
     this.gameType = gameType;
   }
-  createPlayers(name, token) {
-    var player = new Player(name, token)
+  createPlayers(name, token, wins) {
+    var player = new Player(name, token, wins)
     this.players.push(player)
   }
   checkGameType() {
     if (this.gameType === 'classic') {
       this.classicGamePlay()
-    } 
+    }
     if (this.gameType === 'difficult') {
-      this.difficultGamePlay() 
+      this.difficultGamePlay()
     }
   }
   classicGamePlay() {
