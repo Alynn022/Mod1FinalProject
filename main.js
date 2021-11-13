@@ -23,6 +23,7 @@ var difficultJigglypuffBtn = document.querySelector('button.jigglypuff');
 var difficultPikachuBtn = document.querySelector('button.pikachu');
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var playAgainBtn = document.querySelector('#playAgainBtn');
+var resetScoresBtn = document.querySelector('#resetScoresBtn');
 
 //Variables to persist information in the Data Model
 var newGame;
@@ -43,6 +44,7 @@ difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
 changeGameBtn.addEventListener('click', reload)
 playAgainBtn.addEventListener('click', playGameAgain)
+resetScoresBtn.addEventListener('click', clearLocalStorage)
 
 
 function gameSelectClassic() {
@@ -170,6 +172,20 @@ function playGameAgain() {
     hide(classicContainer)
     hide(classicGameView)
   }
+}
+
+function clearLocalStorage() {
+  localStorage.clear()
+  newGame.players[0].wins = 0
+  newGame.players[1].wins = 0
+  displayWins()
+  hide(battleView)
+  hide(classicGameView)
+  hide(difficultGameView)
+  show(classicContainer)
+  show(difficultContainer)
+  show(classicHomeView)
+  show(difficultHomeView)
 }
 
 function randomClassicCompInput() {
