@@ -3,11 +3,13 @@ class Player {
     this.name = name;
     this.token = token;
     this.wins = wins;
+    this.isWinner = false;
   }
   saveWinsToStorage() {
     localStorage.setItem(this.name, this.wins)
   } 
   retrieveWinsFromStorage() {
+    localStorage.getItem(this.name, this.wins)
   }
   takeTurn() {
   }
