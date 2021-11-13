@@ -8,6 +8,9 @@ var difficultContainer = document.querySelector('#difficultContainer');
 var battleView = document.querySelector('#battleView')
 var humanPokeInput = document.querySelector('#humanPokeInput')
 var compPokeInput = document.querySelector('#compPokeInput')
+var winnerMessageText = document.querySelector('#winnerMessage')
+var humanWinDisplay = document.querySelector('#humanWinDisplay')
+var computerWinDisplay = document.querySelector('#computerWinDisplay')
 
 //variables targeting HTML buttons
 var squirtleBtn = document.querySelector('button.squirtle');
@@ -20,11 +23,13 @@ var pokemon;
 var randomInput;
 
 
+
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
 squirtleBtn.addEventListener('click', beginClassicGame);
 bulbasaurBtn.addEventListener('click', beginClassicGame);
 charmanderBtn.addEventListener('click', beginClassicGame);
+winnerMessageText.addEventListener('click', reload);
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -50,18 +55,27 @@ function beginClassicGame(event) {
   newGame.checkGameType()
   newGame.players[0].saveWinsToStorage()
   newGame.players[1].saveWinsToStorage()
-  winnerView()
+  showWinner()
 }
 
-function winnerView() {
+function displayWinCount() {
+  newGame.players[0].retrieveWinsFromStorage()
+  newGame.players[1].retrieveWinsFromStorage()
+}
+
+function showWinner() {
+  showHumanPokemonInput()
+  showCompPokemonInput()
+  winnerMessage()
+  showWinnerView()
+}  
+
+function showWinnerView() {
   hide(classicHomeView)
   hide(difficultContainer)
   hide(classicContainer)
   show(battleView)
-  showHumanPokemonInput()
-  showCompPokemonInput()
-  
-}  
+}
 
 function showHumanPokemonInput() {
   if (newGame.players[0].token === 'squirtle') {
@@ -71,7 +85,7 @@ function showHumanPokemonInput() {
     humanPokeInput.src = "assets/bulbasaur.jpg"
   }
   else if (newGame.players[0].token=== 'charmander') {
-    humanPokeInput.src = "assets/bulbasaur.jpg"
+    humanPokeInput.src = "assets/charmander.jpg"
   }
 }
 
@@ -83,14 +97,29 @@ function showCompPokemonInput() {
     compPokeInput.src = "assets/bulbasaur.jpg"
   }
   else if (newGame.players[1].token=== 'charmander') {
-    compPokeInput.src = "assets/bulbasaur.jpg"
+    compPokeInput.src = "assets/charmander.jpg"
   }
 }
 
+function winnerMessage() {
+  if ((newGame.players[0].isWinner === true) && (newGame.players[1].isWinner === false)) {
+    winnerMessageText.innerText = "You're The Winner!! Play Again?"
+  }
+  else if ((newGame.players[0].isWinner === false) && (newGame.players[1].isWinner === false)) {
+    winnerMessageText.innerText = "Draw! Play Again?"
+  }
+  else if ((newGame.players[1].isWinner === true) && (newGame.players[0].isWinner === false)) {
+    winnerMessageText.innerText = "You Lost! Play Again?"
+  }
+}
 
 function randomClassicCompInput() {
   pokemon = ['squirtle', 'bulbasaur', 'charmander']
   randomInput = pokemon[getRandomIndex(pokemon)]
+}
+
+function reload() {
+  location.reload()
 }
 
 function getRandomIndex(array) {

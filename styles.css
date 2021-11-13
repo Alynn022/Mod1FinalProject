@@ -150,10 +150,25 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.winnerMessage {
+
+.winner-message {
   font-size: 50px;
   color: red;
   border: 3px solid yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.human-vs-comp-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.vs-img {
+  height: 200px;
+  width: 200px;
 }
 
 .pokemon-img {
@@ -161,6 +176,7 @@ h2 {
   width: 200px;
   border: 3px solid black;
 }
+
 .hidden {
   display: none;
 }

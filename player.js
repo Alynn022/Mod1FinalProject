@@ -3,15 +3,16 @@ class Player {
     this.name = name;
     this.token = token;
     this.wins = wins;
+    this.isWinner = false;
   }
   saveWinsToStorage() {
     localStorage.setItem(this.name, this.wins)
   } 
-  showPokemonAtBattle() {
-    
-  }
   retrieveWinsFromStorage() {
-    
+  var humanWins = localStorage.getItem('human') || 0
+  var compWins = localStorage.getItem('comp') || 0
+  humanWins = parseInt(humanWins)
+  compWins = parseInt(compWins)
   }
   takeTurn() {
   }
