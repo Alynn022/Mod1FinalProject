@@ -21,6 +21,8 @@ var difficultBulbasaurBtn = document.querySelector('button.bulbasaur-2');
 var difficultCharmanderBtn = document.querySelector('button.charmander-2');
 var difficultJigglypuffBtn = document.querySelector('button.jigglypuff');
 var difficultPikachuBtn = document.querySelector('button.pikachu');
+var changeGameBtn = document.querySelector('#changeGameBtn');
+var playAgainBtn = document.querySelector('#playAgainBtn');
 
 //Variables to persist information in the Data Model
 var newGame;
@@ -39,8 +41,6 @@ difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
 difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
-winnerMessageText.addEventListener('click', reload);
-winnerMessageText.addEventListener('mouseover', addHoverState, false);
 
 
 function gameSelectClassic() {
@@ -144,18 +144,14 @@ function showCompPokemonInput() {
 
 function winnerMessage() {
   if ((newGame.players[0].isWinner === true) && (newGame.players[1].isWinner === false)) {
-    winnerMessageText.innerText = "You Won!! Play Again?"
+    winnerMessageText.innerText = "You Won!!"
   }
   else if ((newGame.players[0].isWinner === false) && (newGame.players[1].isWinner === false)) {
-    winnerMessageText.innerText = "Draw! Play Again?"
+    winnerMessageText.innerText = "Draw!"
   }
   else if ((newGame.players[1].isWinner === true) && (newGame.players[0].isWinner === false)) {
-    winnerMessageText.innerText = "You Lost! Play Again?"
+    winnerMessageText.innerText = "You Lost!"
   }
-}
-
-function addHoverState() {
-  winnerMessageText.classList.add(".hover-state")
 }
 
 function randomClassicCompInput() {
