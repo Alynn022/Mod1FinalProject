@@ -13,25 +13,29 @@ var humanWinDisplay = document.querySelector('#humanWinDisplay')
 var computerWinDisplay = document.querySelector('#computerWinDisplay')
 
 //variables targeting HTML buttons
-var squirtleBtn = document.querySelector('button.squirtle');
-var bulbasaurBtn = document.querySelector('button.bulbasaur');
-var charmanderBtn = document.querySelector('button.charmander');
+var classicSquirtleBtn = document.querySelector('button.squirtle');
+var classicBulbasaurBtn = document.querySelector('button.bulbasaur');
+var classicCharmanderBtn = document.querySelector('button.charmander');
+var difficultSquirtleBtn = document.querySelector('button.squirtle-2');
+var difficultBulbasaurBtn = document.querySelector('button.bulbasaur-2');
+var difficultCharmanderBtn = document.querySelector('button.charmander-2');
+var difficultJigglypuffBtn = document.querySelector('button.jigglypuff');
+var difficultPikachuBtn = document.querySelector('button.pikachu');
 
 //Variables to persist information in the Data Model
 var newGame;
 var pokemon;
 var randomInput;
 
-
+window.addEventListener('load', displayWins)
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
-squirtleBtn.addEventListener('click', beginClassicGame);
-bulbasaurBtn.addEventListener('click', beginClassicGame);
-charmanderBtn.addEventListener('click', beginClassicGame);
+classicSquirtleBtn.addEventListener('click', beginClassicGame);
+classicBulbasaurBtn.addEventListener('click', beginClassicGame);
+classicCharmanderBtn.addEventListener('click', beginClassicGame);
 winnerMessageText.addEventListener('click', reload);
+winnerMessageText.addEventListener('mouseover', addHoverState, false);
 
-var winValues = retrieveWins()
-var parsedValues = parseWinValues(winValues)
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -68,8 +72,8 @@ function parseWinValues(winValues) {
 }
 
 function displayWins() {
-  humanWinDisplay.innerText = `${newGame.players[0].wins}`
-  computerWinDisplay.innerText = `${newGame.players[1].wins}`
+  humanWinDisplay.innerText = retrieveWins().humanWins
+  computerWinDisplay.innerText = retrieveWins().compWins
 }
 
 function showWinner() {
@@ -120,6 +124,10 @@ function winnerMessage() {
   else if ((newGame.players[1].isWinner === true) && (newGame.players[0].isWinner === false)) {
     winnerMessageText.innerText = "You Lost! Play Again?"
   }
+}
+
+function addHoverState() {
+  winnerMessageText.classList.add(".hover-state")
 }
 
 function randomClassicCompInput() {
