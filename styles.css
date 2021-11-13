@@ -15,9 +15,20 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  font-size: 75px;
-  color:white;
+  flex-direction: column;
+}
+
+.descriptor {
+  font-size: 50px;
+  color: rgba(218, 20, 20, 0.822);
+  margin: 0px;
+  position: relative;
+  top: -75px;
+}
+
+.pokemon-logo {
+  width: 400px;
+  height: 200px;
 }
 
 p {
@@ -41,7 +52,11 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-} 
+  position: relative;
+  bottom: 90px;
+  left: 30px;
+}
+ 
 
 .classic-container,
 .difficult-container {
@@ -105,10 +120,11 @@ h2 {
   font-size: 25px;
 }
 
-button {
+.poke-btn {
   height: 100px;
   width: 100px;
   padding-top: 95px;
+  border-radius: 5px;
 }
 
 .classic-form {
@@ -149,15 +165,20 @@ button {
   background-repeat: no-repeat;
 }
 
-
-
 .winner-message {
   font-size: 50px;
-  color: red;
-  border: 3px solid yellow;
+  background: #2a4faf;
+  color: #ffde5c;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.human-wins,
+.computer-wins {
+  color: white;
+  font-size: 45px;
 }
 
 .human-vs-comp-img {
@@ -174,11 +195,35 @@ button {
 .pokemon-img {
   height: 200px;
   width: 200px;
+  border-radius: 5px;
   border: 3px solid black;
 }
 
-.hover-state {
-  color: black;
+.change-game-btn, 
+.play-again-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  background: white;
+}
+
+.play-again-btn {
+  position: relative;
+  left: 205px;
+  top: -45px;
+}
+
+.reset-scores-btn {
+  position: relative;
+  left: 30px;
+  top: 46px;
+}
+
+.change-game-btn {
+  position: relative;
+  left: 205px;
+  top: 95px;
 }
 
 .hidden {
