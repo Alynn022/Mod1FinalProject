@@ -73,4 +73,11 @@ class Game {
       this.players[1].wins += 1
     }
   }
+  startGame(selection, parsedValues) {
+    this.createPlayers('human', selection, parsedValues.humanWins)
+    this.createPlayers('comp', randomInput, parsedValues.compWins)
+    this.checkGameType()
+    this.players[0].saveWinsToStorage()
+    this.players[1].saveWinsToStorage()
+  }
 }

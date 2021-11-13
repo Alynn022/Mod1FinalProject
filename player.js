@@ -9,10 +9,7 @@ class Player {
     localStorage.setItem(this.name, this.wins)
   } 
   retrieveWinsFromStorage() {
-  var humanWins = localStorage.getItem('human') || 0
-  var compWins = localStorage.getItem('comp') || 0
-  humanWins = parseInt(humanWins)
-  compWins = parseInt(compWins)
+    localStorage.getItem(this.name, this.wins)
   }
   takeTurn() {
   }

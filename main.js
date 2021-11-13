@@ -23,13 +23,15 @@ var pokemon;
 var randomInput;
 
 
-
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
 squirtleBtn.addEventListener('click', beginClassicGame);
 bulbasaurBtn.addEventListener('click', beginClassicGame);
 charmanderBtn.addEventListener('click', beginClassicGame);
 winnerMessageText.addEventListener('click', reload);
+
+var winValues = retrieveWins()
+var parsedValues = parseWinValues(winValues)
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -44,23 +46,30 @@ function gameSelectDifficult() {
 }
 
 function beginClassicGame(event) {
-  var humanWins = localStorage.getItem('human') || 0
-  var compWins = localStorage.getItem('comp') || 0
-  humanWins = parseInt(humanWins)
-  compWins = parseInt(compWins)
+  var winValues = retrieveWins()
+  var parsedValues = parseWinValues(winValues)
   randomClassicCompInput()
   newGame = new Game('classic')
-  newGame.createPlayers('human', event.target.value, humanWins)
-  newGame.createPlayers('comp', randomInput, compWins)
-  newGame.checkGameType()
-  newGame.players[0].saveWinsToStorage()
-  newGame.players[1].saveWinsToStorage()
+  newGame.startGame(event.target.value, parsedValues)
   showWinner()
+  displayWins()
 }
 
-function displayWinCount() {
-  newGame.players[0].retrieveWinsFromStorage()
-  newGame.players[1].retrieveWinsFromStorage()
+function retrieveWins() {
+  var humanWins = localStorage.getItem('human') || 0
+  var compWins = localStorage.getItem('comp') || 0
+  return { humanWins, compWins }
+}
+
+function parseWinValues(winValues) {
+  var humanWins = parseInt(winValues.humanWins)
+  var compWins = parseInt(winValues.compWins)
+  return { humanWins, compWins }
+}
+
+function displayWins() {
+  humanWinDisplay.innerText = `${newGame.players[0].wins}`
+  computerWinDisplay.innerText = `${newGame.players[1].wins}`
 }
 
 function showWinner() {
@@ -68,7 +77,7 @@ function showWinner() {
   showCompPokemonInput()
   winnerMessage()
   showWinnerView()
-}  
+}
 
 function showWinnerView() {
   hide(classicHomeView)
@@ -80,11 +89,11 @@ function showWinnerView() {
 function showHumanPokemonInput() {
   if (newGame.players[0].token === 'squirtle') {
     humanPokeInput.src = "assets/squirtle.jpg"
-  } 
+  }
   else if (newGame.players[0].token === 'bulbasaur') {
     humanPokeInput.src = "assets/bulbasaur.jpg"
   }
-  else if (newGame.players[0].token=== 'charmander') {
+  else if (newGame.players[0].token === 'charmander') {
     humanPokeInput.src = "assets/charmander.jpg"
   }
 }
@@ -92,18 +101,18 @@ function showHumanPokemonInput() {
 function showCompPokemonInput() {
   if (newGame.players[1].token === 'squirtle') {
     compPokeInput.src = "assets/squirtle.jpg"
-  } 
+  }
   else if (newGame.players[1].token === 'bulbasaur') {
     compPokeInput.src = "assets/bulbasaur.jpg"
   }
-  else if (newGame.players[1].token=== 'charmander') {
+  else if (newGame.players[1].token === 'charmander') {
     compPokeInput.src = "assets/charmander.jpg"
   }
 }
 
 function winnerMessage() {
   if ((newGame.players[0].isWinner === true) && (newGame.players[1].isWinner === false)) {
-    winnerMessageText.innerText = "You're The Winner!! Play Again?"
+    winnerMessageText.innerText = "You Won!! Play Again?"
   }
   else if ((newGame.players[0].isWinner === false) && (newGame.players[1].isWinner === false)) {
     winnerMessageText.innerText = "Draw! Play Again?"
