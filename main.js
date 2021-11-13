@@ -41,6 +41,8 @@ difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
 difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
+changeGameBtn.addEventListener('click', reload)
+playAgainBtn.addEventListener('click', playGameAgain)
 
 
 function gameSelectClassic() {
@@ -151,6 +153,22 @@ function winnerMessage() {
   }
   else if ((newGame.players[1].isWinner === true) && (newGame.players[0].isWinner === false)) {
     winnerMessageText.innerText = "You Lost!"
+  }
+}
+
+function playGameAgain() {
+  hide(battleView)
+  if (newGame.gameType === 'classic') {
+    show(classicContainer)
+    show(classicGameView)
+    hide(difficultContainer)
+    hide(difficultGameView)
+  }
+  else if (newGame.gameType === 'difficult') {
+    show(difficultContainer)
+    show(difficultGameView)
+    hide(classicContainer)
+    hide(classicGameView)
   }
 }
 
