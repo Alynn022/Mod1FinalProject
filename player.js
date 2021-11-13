@@ -7,7 +7,11 @@ class Player {
   saveWinsToStorage() {
     localStorage.setItem(this.name, this.wins)
   } 
+  showPokemonAtBattle() {
+    
+  }
   retrieveWinsFromStorage() {
+    
   }
   takeTurn() {
   }
