@@ -105,11 +105,7 @@ h2 {
   font-size: 25px;
 }
 
-.squirtle, 
-.bulbasaur,
-.charmander,
-.jigglypuff,
-.pikachu {
+button {
   height: 100px;
   width: 100px;
   padding-top: 95px;
@@ -120,19 +116,22 @@ h2 {
   flex-direction: column;
 }
 
-.squirtle {
+.squirtle,
+.squirtle-2 {
   background: url("assets/squirtle.jpg");
   background-size: 100px 100px;
   background-repeat: no-repeat;
 }
 
-.bulbasaur {
+.bulbasaur,
+.bulbasaur-2 {
   background: url("assets/bulbasaur.jpg");
   background-size: 100px 100px;
   background-repeat: no-repeat;
 }
 
-.charmander {
+.charmander,
+.charmander-2 {
   background: url("assets/charmander.jpg");
   background-size: 100px 100px;
   background-repeat: no-repeat;

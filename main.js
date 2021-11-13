@@ -27,12 +27,18 @@ var newGame;
 var pokemon;
 var randomInput;
 
+//Event Listeners 
 window.addEventListener('load', displayWins)
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
 classicSquirtleBtn.addEventListener('click', beginClassicGame);
 classicBulbasaurBtn.addEventListener('click', beginClassicGame);
 classicCharmanderBtn.addEventListener('click', beginClassicGame);
+difficultSquirtleBtn.addEventListener('click', beginDifficultGame);
+difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
+difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
+difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
+difficultPikachuBtn.addEventListener('click', beginDifficultGame);
 winnerMessageText.addEventListener('click', reload);
 winnerMessageText.addEventListener('mouseover', addHoverState, false);
 
@@ -54,6 +60,16 @@ function beginClassicGame(event) {
   var parsedValues = parseWinValues(winValues)
   randomClassicCompInput()
   newGame = new Game('classic')
+  newGame.startGame(event.target.value, parsedValues)
+  showWinner()
+  displayWins()
+}
+
+function beginDifficultGame(event) {
+  var winValues = retrieveWins()
+  var parsedValues = parseWinValues(winValues)
+  randomClassicCompInput()
+  newGame = new Game('difficult')
   newGame.startGame(event.target.value, parsedValues)
   showWinner()
   displayWins()
@@ -100,6 +116,12 @@ function showHumanPokemonInput() {
   else if (newGame.players[0].token === 'charmander') {
     humanPokeInput.src = "assets/charmander.jpg"
   }
+  else if (newGame.players[0].token === 'jigglypuff') {
+    humanPokeInput.src = "assets/jigglypuff.jpg"
+  }
+  else if (newGame.players[0].token === 'pikachu') {
+    humanPokeInput.src = "assets/pikachu.jpg"
+  }
 }
 
 function showCompPokemonInput() {
@@ -111,6 +133,12 @@ function showCompPokemonInput() {
   }
   else if (newGame.players[1].token === 'charmander') {
     compPokeInput.src = "assets/charmander.jpg"
+  }
+  else if (newGame.players[1].token === 'jigglypuff') {
+    compPokeInput.src = "assets/jigglypuff.jpg"
+  }
+  else if (newGame.players[1].token === 'pikachu') {
+    compPokeInput.src = "assets/pikachu.jpg"
   }
 }
 

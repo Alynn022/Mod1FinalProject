@@ -44,33 +44,43 @@ class Game {
   difficultGamePlay() {
     if ((this.players[0].token === 'squirtle') && ((this.players[1].token === 'charmander') || (this.players[1].token === 'jigglypuff'))) {
       this.players[0].wins += 1
+      this.players[0].isWinner = true
     }
     else if ((this.players[0].token === 'bulbasaur') && ((this.players[1].token === 'squirtle') || (this.players[1].token === 'pikachu'))) {
       this.players[0].wins += 1
+      this.players[0].isWinner = true
     }
     else if ((this.players[0].token === 'charmander') && ((this.players[1].token === 'bulbasaur') || (this.players[1].token === 'jigglypuff'))) {
       this.players[0].wins += 1
+      this.players[0].isWinner = true
     }
     else if ((this.players[0].token === 'jigglypuff') && ((this.players[1].token === 'bulbasaur') || (this.players[1].token === 'pikachu'))) {
       this.players[0].wins += 1
+      this.players[0].isWinner = true
     }
     else if ((this.players[0].token === 'pikachu') && ((this.players[1].token === 'charmander') || (this.players[1].token === 'squirtle'))) {
       this.players[0].wins += 1
+      this.players[0].isWinner = true
     }
     else if ((this.players[1].token === 'squirtle') && ((this.players[0].token === 'charmander') || (this.players[0].token === 'jigglypuff'))) {
       this.players[1].wins += 1
+      this.players[1].isWinner = true
     }
     else if ((this.players[1].token === 'bulbasaur') && ((this.players[0].token === 'squirtle') || (this.players[0].token === 'pikachu'))) {
       this.player[1].wins += 1
+      this.players[1].isWinner = true
     }
     else if ((this.players[1].token === 'charmander') && ((this.players[0].token === 'bulbasaur') || (this.players[0].token === 'jigglypuff'))) {
       this.players[1].wins += 1
+      this.players[1].isWinner = true
     }
     else if ((this.players[1].token === 'jigglypuff') && ((this.players[0].token === 'bulbasaur') || (this.players[0].token === 'pikachu'))) {
       this.players[1].wins += 1
+      this.players[1].isWinner = true
     }
     else if ((this.players[1].token === 'pikachu') && ((this.players[0].token === 'charmander') || (this.players[0].token === 'squirtle'))) {
       this.players[1].wins += 1
+      this.players[1].isWinner = true
     }
   }
   startGame(selection, parsedValues) {
