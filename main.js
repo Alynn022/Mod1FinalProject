@@ -39,7 +39,7 @@ difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
 difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
-winnerMessageText.addEventListener('click', reload);
+winnerMessageText.addEventListener('click', playAgain);
 winnerMessageText.addEventListener('mouseover', addHoverState, false);
 
 
@@ -163,8 +163,23 @@ function randomClassicCompInput() {
   randomInput = pokemon[getRandomIndex(pokemon)]
 }
 
-function reload() {
-  location.reload()
+function playAgain() {
+  hide(classicHomeView)
+  hide(difficultHomeView)
+  hide(difficultGameView)
+  hide(battleView)
+  checkCurrentGameVersion()
+}
+
+function checkCurrentGameVersion() {
+  if (newGame.gameType === 'classic') {
+    show(classicContainer)
+    show(classicGameView)
+  }
+  else if (newGame.gameType === 'difficult') {
+    show(difficultContainer)
+    show(difficultGameView)
+  }
 }
 
 function getRandomIndex(array) {
