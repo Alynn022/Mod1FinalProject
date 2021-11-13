@@ -175,6 +175,12 @@ h2 {
   justify-content: center;
 }
 
+.human-wins,
+.computer-wins {
+  color: white;
+  font-size: 45px;
+}
+
 .human-vs-comp-img {
   display: flex;
   flex-direction: row;
