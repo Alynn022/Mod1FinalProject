@@ -15,9 +15,20 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  font-size: 75px;
-  color:white;
+  flex-direction: column;
+}
+
+.descriptor {
+  font-size: 50px;
+  color: rgba(218, 20, 20, 0.822);
+  margin: 0px;
+  position: relative;
+  top: -75px;
+}
+
+.pokemon-logo {
+  width: 400px;
+  height: 200px;
 }
 
 p {
@@ -41,7 +52,11 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-} 
+  position: relative;
+  bottom: 90px;
+  left: 30px;
+}
+ 
 
 .classic-container,
 .difficult-container {
@@ -152,8 +167,8 @@ h2 {
 
 .winner-message {
   font-size: 50px;
-  color: red;
-  border: 5px solid yellow;
+  background: #2a4faf;
+  color: #ffde5c;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
