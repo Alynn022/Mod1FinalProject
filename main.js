@@ -23,6 +23,7 @@ var difficultJigglypuffBtn = document.querySelector('button.jigglypuff');
 var difficultPikachuBtn = document.querySelector('button.pikachu');
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var resetScoresBtn = document.querySelector('#resetScoresBtn');
+var changeGameBtn2 = document.querySelector('#changeGameBtn2');
 
 //Variables to persist information in the Data Model
 var newGame;
@@ -30,6 +31,7 @@ var pokemon;
 var randomInput;
 
 //Event Listeners 
+window.addEventListener('load', checkForZeros)
 window.addEventListener('load', displayWins)
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
@@ -43,7 +45,7 @@ difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
 changeGameBtn.addEventListener('click', reload)
 resetScoresBtn.addEventListener('click', clearLocalStorage)
-
+changeGameBtn2.addEventListener('click', reload)
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -76,6 +78,7 @@ function beginDifficultGame(event) {
   newGame.startGame(event.target.value, parsedValues)
   showWinner()
   displayWins()
+  timeOutOnGameEnd()
 }
 
 function retrieveWins() {
@@ -107,6 +110,7 @@ function showWinnerView() {
   hide(difficultContainer)
   hide(classicContainer)
   show(battleView)
+  hide(resetScoresBtn)
 }
 
 function showHumanPokemonInput() {
@@ -158,9 +162,9 @@ function winnerMessage() {
 }
 
 function timeOutOnGameEnd() {
-  setTimeout(function() {
+  setTimeout(function () {
     playGameAgain()
-  }, 4000)
+  }, 3000)
 }
 
 function playGameAgain() {
@@ -170,12 +174,14 @@ function playGameAgain() {
     show(classicGameView)
     hide(difficultContainer)
     hide(difficultGameView)
+    show(resetScoresBtn)
   }
   else if (newGame.gameType === 'difficult') {
     show(difficultContainer)
     show(difficultGameView)
     hide(classicContainer)
     hide(classicGameView)
+    show(resetScoresBtn)
   }
 }
 
@@ -184,6 +190,7 @@ function clearLocalStorage() {
   newGame.players[0].wins = 0
   newGame.players[1].wins = 0
   displayWins()
+  checkForZeros()
   hide(battleView)
   hide(classicGameView)
   hide(difficultGameView)
@@ -191,6 +198,15 @@ function clearLocalStorage() {
   show(difficultContainer)
   show(classicHomeView)
   show(difficultHomeView)
+}
+
+function checkForZeros() {
+  if (localStorage.getItem('human') === null) {
+    hide(resetScoresBtn)
+  } 
+  else {
+    show(resetScoresBtn)
+  }
 }
 
 function randomClassicCompInput() {

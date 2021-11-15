@@ -209,13 +209,12 @@ h2 {
 
 .reset-scores-btn {
   position: relative;
-  left: 30px;
   top: 46px;
 }
 
 .change-game-btn {
   position: relative;
-  left: 205px;
+  left: 10px;
   top: 95px;
 }
 
