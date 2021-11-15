@@ -199,19 +199,12 @@ h2 {
   border: 3px solid black;
 }
 
-.change-game-btn, 
-.play-again-btn {
+.change-game-btn {
   width: 200px;
   height: 50px;
   font-size: 20px;
   border-radius: 5px;
   background: white;
-}
-
-.play-again-btn {
-  position: relative;
-  left: 205px;
-  top: -45px;
 }
 
 .reset-scores-btn {

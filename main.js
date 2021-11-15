@@ -22,7 +22,6 @@ var difficultCharmanderBtn = document.querySelector('button.charmander-2');
 var difficultJigglypuffBtn = document.querySelector('button.jigglypuff');
 var difficultPikachuBtn = document.querySelector('button.pikachu');
 var changeGameBtn = document.querySelector('#changeGameBtn');
-var playAgainBtn = document.querySelector('#playAgainBtn');
 var resetScoresBtn = document.querySelector('#resetScoresBtn');
 
 //Variables to persist information in the Data Model
@@ -43,7 +42,6 @@ difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
 changeGameBtn.addEventListener('click', reload)
-playAgainBtn.addEventListener('click', playGameAgain)
 resetScoresBtn.addEventListener('click', clearLocalStorage)
 
 
@@ -67,6 +65,7 @@ function beginClassicGame(event) {
   newGame.startGame(event.target.value, parsedValues)
   showWinner()
   displayWins()
+  timeOutOnGameEnd()
 }
 
 function beginDifficultGame(event) {
@@ -156,6 +155,12 @@ function winnerMessage() {
   else if ((newGame.players[1].isWinner === true) && (newGame.players[0].isWinner === false)) {
     winnerMessageText.innerText = "You Lost!"
   }
+}
+
+function timeOutOnGameEnd() {
+  setTimeout(function() {
+    playGameAgain()
+  }, 4000)
 }
 
 function playGameAgain() {
