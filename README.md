@@ -13,7 +13,7 @@
 
 ## Overview
 
-This application is a version of the game Rock, Paper, Scissors that allows the users to play with Pokemon characters in place of the usual rock, paper, and scissors. In this application, the user is able to play again an AI that will randomly choose a Pokemon to battle against the user's Pokemon choice. User has the option to play two different games, a classic version and a difficult version. 
+This application is a version of the game Rock, Paper, Scissors that allows the users to play with Pokemon characters in place of the usual rock, paper, and scissors. In this application, the user is able to play against an AI that will randomly choose a Pokemon to battle against the user's Pokemon choice. User has the option to play two different games, a classic version and a difficult version. 
 
 ## Setup
   
@@ -24,8 +24,8 @@ This application is a version of the game Rock, Paper, Scissors that allows the 
 ## Screenshots  
 Users can select which game they would like to play. Classic or difficult.   
 ![home-view](https://user-images.githubusercontent.com/89872714/142043590-b45466c0-2fb3-40ae-8619-dadc3823c3d2.png)
-!![classic-game](https://media.giphy.com/media/i7T5l0V0pqGdwEWMzY/giphy.gif)
-!![difficult-game](https://media.giphy.com/media/sVvuhtxC2ZW5y4XEzk/giphy.gif)
+![classic-game](https://media.giphy.com/media/i7T5l0V0pqGdwEWMzY/giphy.gif)
+![difficult-game](https://media.giphy.com/media/sVvuhtxC2ZW5y4XEzk/giphy.gif)
    
 The user can see whether they've won, and their current score.    
 ![win-result](https://user-images.githubusercontent.com/89872714/142043655-a657383d-1554-426e-8563-94fc58e16561.jpg)
@@ -38,7 +38,7 @@ User can click the change game button and choose to play a different game.
 ![change-game](https://media.giphy.com/media/yYk0HUCE3BZpSyijWf/giphy.gif)
 
 User can reset their score to 0, and start over at home view. 
-!![reset-score](https://media.giphy.com/media/jlQmMWjI3VF9ZaZNyY/giphy.gif)
+![reset-score](https://media.giphy.com/media/jlQmMWjI3VF9ZaZNyY/giphy.gif)
 
 ## Links  
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
