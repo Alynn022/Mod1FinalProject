@@ -44,9 +44,11 @@ Feel free to play a few rounds. [here](https://github.com/Alynn022/Mod1FinalProj
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
 
 ## Challenges 
+The most challenging part of this project was understanding the class to class interaction. It was intuitive to create an instance of new Player when an instance of new Game was being instantiated. But, with the given methods from the specs sheet, I believe I should have incorporated the methods for the Player in my planning more, and as I got further in the project, the harder it was for me to go back and add methods to be invoked in main.js. 
 
 ## Wins 
-  
+Overall functionality is the biggest win for me. Once I overcame the logic and functionality of the classic game, the difficult was really simple to incorporate the same logic, even with more choices and inputs for the user. Another win was getting the player's pokemon choice image to show on the battle field based on different inputs. That was most satisfying, and getting the different views to show. It really cemented that I set up the HTML sections well enough to easily change into different views. 
+
 ## Future Additions
 - Add functionality for showing the user's past input and win/loss against cpu.  
 - Animate a battle scene.   
