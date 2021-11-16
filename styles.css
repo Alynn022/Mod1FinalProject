@@ -64,6 +64,11 @@ h2 {
 }
 
 .classic-home,
+.difficult-home {
+  cursor: pointer;
+}
+
+.classic-home,
 .classic-game,
 .difficult-home,
 .difficult-game,
@@ -208,6 +213,10 @@ h2 {
 .reset-scores-btn {
   position: relative;
   top: 46px;
+}
+
+button {
+  cursor: pointer;
 }
 
 .hidden {
