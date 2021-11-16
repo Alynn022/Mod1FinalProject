@@ -152,13 +152,15 @@ function clearLocalStorage() {
   localStorage.clear()
   displayWins()
   checkForZeros()
-  hide(battleView)
-  hide(classicGameView)
-  hide(difficultGameView)
-  show(classicContainer)
-  show(difficultContainer)
-  show(classicHomeView)
-  show(difficultHomeView)
+  // hide(battleView)
+  // hide(classicGameView)
+  // hide(difficultGameView)
+  // show(classicContainer)
+  // show(difficultContainer)
+  // show(classicHomeView)
+  // show(difficultHomeView)
+  var elements = [{element: battleView, hide: true}, {element: classicGameView, hide: true}, {element: difficultGameView, hide: true}, {element: classicContainer, hide: false}, {element: difficultContainer, hide: false}, {element: classicHomeView, hide: false}, {element: difficultHomeView, hide: false}]
+  toggleElements(elements)
 }
 
 function checkForZeros() {
@@ -190,6 +192,16 @@ function getRandomIndex(array) {
 
 function hide(element) {
   element.classList.add('hidden')
+}
+
+function toggleElements(elementsArray) {
+  for (var i = 0; i < elementsArray.length; i++) {
+    if (elementsArray[i].hide) {
+      elementsArray[i].element.classList.add('hidden')
+    } else {
+      elementsArray[i].element.classList.remove('hidden')
+    }
+  }
 }
 
 function show(element) {
