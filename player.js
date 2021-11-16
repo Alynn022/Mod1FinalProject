@@ -11,7 +11,5 @@ class Player {
   retrieveWinsFromStorage() {
     return localStorage.getItem(this.name)
   }
-  takeTurn() {
-  }
 }
 
