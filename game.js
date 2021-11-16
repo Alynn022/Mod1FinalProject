@@ -16,71 +16,54 @@ class Game {
     }
   }
   classicGamePlay() {
-    if ((this.players[0].token === 'squirtle') && (this.players[1].token === 'charmander')) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
+    var winningToken = this.checkClassicGameToken()
+    if (winningToken) {
+      var winner = this.findWinner(winningToken)
+      winner.wins += 1
+      winner.isWinner = true
     }
-    else if ((this.players[0].token === 'bulbasaur') && (this.players[1].token === 'squirtle')) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
+  }
+  checkClassicGameToken() {
+    var tokens = [this.players[0].token, this.players[1].token]
+    if (tokens.includes('squirtle') && tokens.includes('charmander')) {
+      return 'squirtle'
+    } else if (tokens.includes('charmander') && tokens.includes('bulbasaur')) {
+      return 'charmander'
+    } else if (tokens.includes('bulbasaur') && tokens.includes('squirtle')) {
+      return 'bulbasaur'
+    } else if (this.players[0].token === this.players[1].token)
+      return
+  }
+  findWinner(token) {
+    if (this.players[0].token === token) {
+      return this.players[0]
+    } else {
+      return this.players[1]
     }
-    else if ((this.players[0].token === 'charmander') && (this.players[1].token === 'bulbasaur')) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
+  }
+  checkDifficultGameWinner() {
+    var tokenOne = this.players[0].token
+    var tokenTwo = this.players[1].token
+    var winningConditions = {
+      squirtle: ['charmander', 'jigglypuff'],
+      bulbasaur: ['squirtle', 'pikachu'],
+      charmander: ['bulbasaur', 'jigglypuff'],
+      jigglypuff: ['bulbasaur', 'pikachu'],
+      pikachu: ['charmander', 'squirtle'],
     }
-    else if ((this.players[1].token === 'squirtle') && (this.players[0].token === 'charmander')) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
-    }
-    else if ((this.players[1].token === 'bulbasaur') && (this.players[0].token === 'squirtle')) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
-    }
-    else if ((this.players[1].token === 'charmander') && (this.players[0].token === 'bulbasaur')) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
+    if (winningConditions[tokenOne].includes(tokenTwo)) {
+      return this.players[0]
+    } else if (winningConditions[tokenTwo].includes(tokenOne)) {
+      return this.players[1]
+    } else if (tokenOne === tokenTwo) {
+      return
     }
   }
   difficultGamePlay() {
-    if ((this.players[0].token === 'squirtle') && ((this.players[1].token === 'charmander') || (this.players[1].token === 'jigglypuff'))) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
-    }
-    else if ((this.players[0].token === 'bulbasaur') && ((this.players[1].token === 'squirtle') || (this.players[1].token === 'pikachu'))) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
-    }
-    else if ((this.players[0].token === 'charmander') && ((this.players[1].token === 'bulbasaur') || (this.players[1].token === 'jigglypuff'))) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
-    }
-    else if ((this.players[0].token === 'jigglypuff') && ((this.players[1].token === 'bulbasaur') || (this.players[1].token === 'pikachu'))) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
-    }
-    else if ((this.players[0].token === 'pikachu') && ((this.players[1].token === 'charmander') || (this.players[1].token === 'squirtle'))) {
-      this.players[0].wins += 1
-      this.players[0].isWinner = true
-    }
-    else if ((this.players[1].token === 'squirtle') && ((this.players[0].token === 'charmander') || (this.players[0].token === 'jigglypuff'))) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
-    }
-    else if ((this.players[1].token === 'bulbasaur') && ((this.players[0].token === 'squirtle') || (this.players[0].token === 'pikachu'))) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
-    }
-    else if ((this.players[1].token === 'charmander') && ((this.players[0].token === 'bulbasaur') || (this.players[0].token === 'jigglypuff'))) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
-    }
-    else if ((this.players[1].token === 'jigglypuff') && ((this.players[0].token === 'bulbasaur') || (this.players[0].token === 'pikachu'))) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
-    }
-    else if ((this.players[1].token === 'pikachu') && ((this.players[0].token === 'charmander') || (this.players[0].token === 'squirtle'))) {
-      this.players[1].wins += 1
-      this.players[1].isWinner = true
+    var winner = this.checkDifficultGameWinner()
+    if (winner) {
+      winner.wins += 1
+      winner.isWinner = true
     }
   }
   startGame(selection, parsedValues) {

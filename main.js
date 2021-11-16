@@ -31,8 +31,7 @@ var pokemon;
 var randomInput;
 
 //Event Listeners 
-window.addEventListener('load', checkForZeros)
-window.addEventListener('load', displayWins)
+window.addEventListener('load', checkToDisplay);
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
 classicSquirtleBtn.addEventListener('click', beginClassicGame);
@@ -43,9 +42,9 @@ difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
 difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
-changeGameBtn.addEventListener('click', reload)
-resetScoresBtn.addEventListener('click', clearLocalStorage)
-changeGameBtn2.addEventListener('click', reload)
+changeGameBtn.addEventListener('click', reload);
+resetScoresBtn.addEventListener('click', clearLocalStorage);
+changeGameBtn2.addEventListener('click', reload);
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -99,8 +98,8 @@ function displayWins() {
 }
 
 function showWinner() {
-  showHumanPokemonInput()
-  showCompPokemonInput()
+  humanPokeInput.src = `assets/${newGame.players[0].token}.jpg`
+  compPokeInput.src = `assets/${newGame.players[1].token}.jpg`
   winnerMessage()
   showWinnerView()
 }
@@ -111,42 +110,6 @@ function showWinnerView() {
   hide(classicContainer)
   show(battleView)
   hide(resetScoresBtn)
-}
-
-function showHumanPokemonInput() {
-  if (newGame.players[0].token === 'squirtle') {
-    humanPokeInput.src = "assets/squirtle.jpg"
-  }
-  else if (newGame.players[0].token === 'bulbasaur') {
-    humanPokeInput.src = "assets/bulbasaur.jpg"
-  }
-  else if (newGame.players[0].token === 'charmander') {
-    humanPokeInput.src = "assets/charmander.jpg"
-  }
-  else if (newGame.players[0].token === 'jigglypuff') {
-    humanPokeInput.src = "assets/jigglypuff.jpg"
-  }
-  else if (newGame.players[0].token === 'pikachu') {
-    humanPokeInput.src = "assets/pikachu.jpg"
-  }
-}
-
-function showCompPokemonInput() {
-  if (newGame.players[1].token === 'squirtle') {
-    compPokeInput.src = "assets/squirtle.jpg"
-  }
-  else if (newGame.players[1].token === 'bulbasaur') {
-    compPokeInput.src = "assets/bulbasaur.jpg"
-  }
-  else if (newGame.players[1].token === 'charmander') {
-    compPokeInput.src = "assets/charmander.jpg"
-  }
-  else if (newGame.players[1].token === 'jigglypuff') {
-    compPokeInput.src = "assets/jigglypuff.jpg"
-  }
-  else if (newGame.players[1].token === 'pikachu') {
-    compPokeInput.src = "assets/pikachu.jpg"
-  }
 }
 
 function winnerMessage() {
@@ -187,17 +150,17 @@ function playGameAgain() {
 
 function clearLocalStorage() {
   localStorage.clear()
-  newGame.players[0].wins = 0
-  newGame.players[1].wins = 0
   displayWins()
   checkForZeros()
-  hide(battleView)
-  hide(classicGameView)
-  hide(difficultGameView)
-  show(classicContainer)
-  show(difficultContainer)
-  show(classicHomeView)
-  show(difficultHomeView)
+  // hide(battleView)
+  // hide(classicGameView)
+  // hide(difficultGameView)
+  // show(classicContainer)
+  // show(difficultContainer)
+  // show(classicHomeView)
+  // show(difficultHomeView)
+  var elements = [{element: battleView, hide: true}, {element: classicGameView, hide: true}, {element: difficultGameView, hide: true}, {element: classicContainer, hide: false}, {element: difficultContainer, hide: false}, {element: classicHomeView, hide: false}, {element: difficultHomeView, hide: false}]
+  toggleElements(elements)
 }
 
 function checkForZeros() {
@@ -214,6 +177,11 @@ function randomClassicCompInput() {
   randomInput = pokemon[getRandomIndex(pokemon)]
 }
 
+function checkToDisplay() {
+  checkForZeros()
+  displayWins()
+}
+
 function reload() {
   location.reload()
 }
@@ -224,6 +192,16 @@ function getRandomIndex(array) {
 
 function hide(element) {
   element.classList.add('hidden')
+}
+
+function toggleElements(elementsArray) {
+  for (var i = 0; i < elementsArray.length; i++) {
+    if (elementsArray[i].hide) {
+      elementsArray[i].element.classList.add('hidden')
+    } else {
+      elementsArray[i].element.classList.remove('hidden')
+    }
+  }
 }
 
 function show(element) {
