@@ -4,8 +4,8 @@
 - [Setup](#setup)
 - [Screentshots](#screenshots)
 - [Links](#links)
-- [Challenges] (#challenges)
-- [Wins] (#wins)
+- [Challenges](#challenges)
+- [Wins](#wins)
 - [Future Additions](#future-additions)
 - [Contributors](#contributors)
 - [Technologies](#technologies)
@@ -24,21 +24,21 @@ This application is a version of the game Rock, Paper, Scissors that allows the 
 ## Screenshots  
 Users can select which game they would like to play. Classic or difficult.   
 ![home-view](https://user-images.githubusercontent.com/89872714/142043590-b45466c0-2fb3-40ae-8619-dadc3823c3d2.png)
-![classic-game](https://user-images.githubusercontent.com/89872714/142041987-c01b10b5-d474-4223-9fbb-f1ed5fe27bb4.png)
-![difficult-game](https://user-images.githubusercontent.com/89872714/142041653-38359630-4a51-44cd-b0a4-3b7fa34ad769.png)
+!![classic-game](https://media.giphy.com/media/i7T5l0V0pqGdwEWMzY/giphy.gif)
+!![difficult-game](https://media.giphy.com/media/sVvuhtxC2ZW5y4XEzk/giphy.gif)
    
 The user can see whether they've won, and their current score.    
 ![win-result](https://user-images.githubusercontent.com/89872714/142043655-a657383d-1554-426e-8563-94fc58e16561.jpg)
 ![lose-result](https://user-images.githubusercontent.com/89872714/142043696-3268096e-c957-4a13-9f61-49a4f9f7d75c.png)
 
 When the game has ended, it will time-out and the user can play again. 
-![play-again](https://user-images.githubusercontent.com/89872714/142043510-5a725c14-417a-4cf2-b282-2a006dc4f8be.png)
+![play-again](https://media.giphy.com/media/oH3fePQV1POMtHKXhj/giphy.gif)
 
 User can click the change game button and choose to play a different game.   
-![choose-game](https://user-images.githubusercontent.com/89872714/142043279-bb6aaf0c-533f-4190-936d-06b05c5dc4dd.png)
+![change-game](https://media.giphy.com/media/yYk0HUCE3BZpSyijWf/giphy.gif)
 
 User can reset their score to 0, and start over at home view. 
-![reset-score](https://user-images.githubusercontent.com/89872714/142041809-d8bfcfe2-a787-4866-8f16-c6d97fad877f.png)
+!![reset-score](https://media.giphy.com/media/jlQmMWjI3VF9ZaZNyY/giphy.gif)
 
 ## Links  
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
