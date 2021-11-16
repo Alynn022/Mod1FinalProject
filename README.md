@@ -4,9 +4,12 @@
 - [Setup](#setup)
 - [Screentshots](#screenshots)
 - [Links](#links)
+- [Challenges] (#challenges)
+- [Wins] (#wins)
 - [Future Additions](#future-additions)
 - [Contributors](#contributors)
 - [Technologies](#technologies)
+
 
 ## Overview
 
@@ -20,25 +23,32 @@ This application is a version of the game Rock, Paper, Scissors that allows the 
    
 ## Screenshots  
 Users can select which game they would like to play. Classic or difficult.   
-![intro](https://user-images.githubusercontent.com/62816754/140630201-4e0521c9-39ab-4630-98e6-f13324dec6f2.gif)  
-
+![home-view](https://user-images.githubusercontent.com/89872714/142043590-b45466c0-2fb3-40ae-8619-dadc3823c3d2.png)
+![classic-game](https://user-images.githubusercontent.com/89872714/142041987-c01b10b5-d474-4223-9fbb-f1ed5fe27bb4.png)
+![difficult-game](https://user-images.githubusercontent.com/89872714/142041653-38359630-4a51-44cd-b0a4-3b7fa34ad769.png)
    
 The user can see whether they've won, and their current score.    
-![timer-countdown](https://user-images.githubusercontent.com/62816754/140630210-f509a779-5d47-4711-8a34-66af2e9bfef2.gif)
-  
+![win-result](https://user-images.githubusercontent.com/89872714/142043655-a657383d-1554-426e-8563-94fc58e16561.jpg)
+![lose-result](https://user-images.githubusercontent.com/89872714/142043696-3268096e-c957-4a13-9f61-49a4f9f7d75c.png)
 
 When the game has ended, it will time-out and the user can play again. 
-![scroll](https://user-images.githubusercontent.com/62816754/140630234-ffb34e54-4c87-493b-828c-5efdcc9d9645.gif)
+![play-again](https://user-images.githubusercontent.com/89872714/142043510-5a725c14-417a-4cf2-b282-2a006dc4f8be.png)
 
-User can choose to play a different game.   
-![error](https://user-images.githubusercontent.com/62816754/140630311-2bc7650e-8424-4a40-87a9-639aed3c1ed1.gif)
+User can click the change game button and choose to play a different game.   
+![choose-game](https://user-images.githubusercontent.com/89872714/142043279-bb6aaf0c-533f-4190-936d-06b05c5dc4dd.png)
 
-User can reset their score to 0, and start over. 
+User can reset their score to 0, and start over at home view. 
+![reset-score](https://user-images.githubusercontent.com/89872714/142041809-d8bfcfe2-a787-4866-8f16-c6d97fad877f.png)
 
-## Links
-Feel free to play a few rounds. [here](https://github.com/Alynn022/Mod1FinalProject)  
+## Links  
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
-  
+
+## Challenges 
+The most challenging part of this project was understanding the class to class interaction. It was intuitive to create an instance of new Player when an instance of new Game was being instantiated. But, with the given methods from the specs sheet, I believe I should have incorporated the methods for the Player in my planning more, and as I got further in the project, the harder it was for me to go back and add methods to be invoked in main.js. 
+
+## Wins 
+Overall functionality is the biggest win for me. Once I overcame the logic and functionality of the classic game, the difficult was really simple to incorporate the same logic, even with more choices and inputs for the user. Another win was getting the player's pokemon choice image to show on the battle field based on different inputs. That was most satisfying, and getting the different views to show. It really cemented that I set up the HTML sections well enough to easily change into different views. 
+
 ## Future Additions
 - Add functionality for showing the user's past input and win/loss against cpu.  
 - Animate a battle scene.   
