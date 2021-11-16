@@ -31,8 +31,7 @@ var pokemon;
 var randomInput;
 
 //Event Listeners 
-window.addEventListener('load', checkForZeros)
-window.addEventListener('load', displayWins)
+window.addEventListener('load', checkToDisplay);
 classicContainer.addEventListener('click', gameSelectClassic);
 difficultContainer.addEventListener('click', gameSelectDifficult);
 classicSquirtleBtn.addEventListener('click', beginClassicGame);
@@ -43,9 +42,9 @@ difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
 difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
-changeGameBtn.addEventListener('click', reload)
-resetScoresBtn.addEventListener('click', clearLocalStorage)
-changeGameBtn2.addEventListener('click', reload)
+changeGameBtn.addEventListener('click', checkToDisplay);
+resetScoresBtn.addEventListener('click', clearLocalStorage);
+changeGameBtn2.addEventListener('click', checkToDisplay);
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -68,6 +67,7 @@ function beginClassicGame(event) {
   showWinner()
   displayWins()
   timeOutOnGameEnd()
+  console.log("anotherNewGame", newGame)
 }
 
 function beginDifficultGame(event) {
@@ -79,6 +79,7 @@ function beginDifficultGame(event) {
   showWinner()
   displayWins()
   timeOutOnGameEnd()
+  console.log("difficultGame", newGame)
 }
 
 function retrieveWins() {
@@ -214,8 +215,9 @@ function randomClassicCompInput() {
   randomInput = pokemon[getRandomIndex(pokemon)]
 }
 
-function reload() {
-  location.reload()
+function checkToDisplay() {
+  checkForZeros()
+  displayWins()
 }
 
 function getRandomIndex(array) {
