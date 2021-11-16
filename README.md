@@ -23,7 +23,8 @@ This application is a version of the game Rock, Paper, Scissors that allows the 
    
 ## Screenshots  
 Users can select which game they would like to play. Classic or difficult.   
-![intro]()  
+!![classic-game](https://user-images.githubusercontent.com/89872714/142041987-c01b10b5-d474-4223-9fbb-f1ed5fe27bb4.png)
+!![difficult-game](https://user-images.githubusercontent.com/89872714/142041653-38359630-4a51-44cd-b0a4-3b7fa34ad769.png)
 
    
 The user can see whether they've won, and their current score.    
@@ -33,11 +34,11 @@ The user can see whether they've won, and their current score.
 When the game has ended, it will time-out and the user can play again. 
 ![play-again]()
 
-User can choose to play a different game.   
-![choose-game]()
+User can click the change game button and choose to play a different game.   
+![choose-game](https://media1.giphy.com/media/SQpv3NY3LuFXiWAwT9/giphy.gif)
 
 User can reset their score to 0, and start over. 
-![reset-score]
+!![reset-score](https://user-images.githubusercontent.com/89872714/142041809-d8bfcfe2-a787-4866-8f16-c6d97fad877f.png)
 
 ## Links
 Feel free to play a few rounds. [here](https://github.com/Alynn022/Mod1FinalProject)  
