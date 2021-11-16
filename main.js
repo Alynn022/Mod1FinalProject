@@ -42,9 +42,9 @@ difficultBulbasaurBtn.addEventListener('click', beginDifficultGame);
 difficultCharmanderBtn.addEventListener('click', beginDifficultGame);
 difficultJigglypuffBtn.addEventListener('click', beginDifficultGame);
 difficultPikachuBtn.addEventListener('click', beginDifficultGame);
-changeGameBtn.addEventListener('click', checkToDisplay);
+changeGameBtn.addEventListener('click', reload);
 resetScoresBtn.addEventListener('click', clearLocalStorage);
-changeGameBtn2.addEventListener('click', checkToDisplay);
+changeGameBtn2.addEventListener('click', reload);
 
 function gameSelectClassic() {
   hide(classicHomeView)
@@ -67,7 +67,6 @@ function beginClassicGame(event) {
   showWinner()
   displayWins()
   timeOutOnGameEnd()
-  console.log("anotherNewGame", newGame)
 }
 
 function beginDifficultGame(event) {
@@ -79,7 +78,6 @@ function beginDifficultGame(event) {
   showWinner()
   displayWins()
   timeOutOnGameEnd()
-  console.log("difficultGame", newGame)
 }
 
 function retrieveWins() {
@@ -100,8 +98,8 @@ function displayWins() {
 }
 
 function showWinner() {
-  showHumanPokemonInput()
-  showCompPokemonInput()
+  humanPokeInput.src = `assets/${newGame.players[0].token}.jpg`
+  compPokeInput.src = `assets/${newGame.players[1].token}.jpg`
   winnerMessage()
   showWinnerView()
 }
@@ -112,42 +110,6 @@ function showWinnerView() {
   hide(classicContainer)
   show(battleView)
   hide(resetScoresBtn)
-}
-
-function showHumanPokemonInput() {
-  if (newGame.players[0].token === 'squirtle') {
-    humanPokeInput.src = "assets/squirtle.jpg"
-  }
-  else if (newGame.players[0].token === 'bulbasaur') {
-    humanPokeInput.src = "assets/bulbasaur.jpg"
-  }
-  else if (newGame.players[0].token === 'charmander') {
-    humanPokeInput.src = "assets/charmander.jpg"
-  }
-  else if (newGame.players[0].token === 'jigglypuff') {
-    humanPokeInput.src = "assets/jigglypuff.jpg"
-  }
-  else if (newGame.players[0].token === 'pikachu') {
-    humanPokeInput.src = "assets/pikachu.jpg"
-  }
-}
-
-function showCompPokemonInput() {
-  if (newGame.players[1].token === 'squirtle') {
-    compPokeInput.src = "assets/squirtle.jpg"
-  }
-  else if (newGame.players[1].token === 'bulbasaur') {
-    compPokeInput.src = "assets/bulbasaur.jpg"
-  }
-  else if (newGame.players[1].token === 'charmander') {
-    compPokeInput.src = "assets/charmander.jpg"
-  }
-  else if (newGame.players[1].token === 'jigglypuff') {
-    compPokeInput.src = "assets/jigglypuff.jpg"
-  }
-  else if (newGame.players[1].token === 'pikachu') {
-    compPokeInput.src = "assets/pikachu.jpg"
-  }
 }
 
 function winnerMessage() {
@@ -188,8 +150,6 @@ function playGameAgain() {
 
 function clearLocalStorage() {
   localStorage.clear()
-  newGame.players[0].wins = 0
-  newGame.players[1].wins = 0
   displayWins()
   checkForZeros()
   hide(battleView)
@@ -218,6 +178,10 @@ function randomClassicCompInput() {
 function checkToDisplay() {
   checkForZeros()
   displayWins()
+}
+
+function reload() {
+  location.reload()
 }
 
 function getRandomIndex(array) {
