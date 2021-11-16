@@ -4,9 +4,12 @@
 - [Setup](#setup)
 - [Screentshots](#screenshots)
 - [Links](#links)
+- [Challenges] (#challenges)
+- [Wins] (#wins)
 - [Future Additions](#future-additions)
 - [Contributors](#contributors)
 - [Technologies](#technologies)
+
 
 ## Overview
 
@@ -20,24 +23,29 @@ This application is a version of the game Rock, Paper, Scissors that allows the 
    
 ## Screenshots  
 Users can select which game they would like to play. Classic or difficult.   
-![intro](https://user-images.githubusercontent.com/62816754/140630201-4e0521c9-39ab-4630-98e6-f13324dec6f2.gif)  
+![intro]()  
 
    
 The user can see whether they've won, and their current score.    
-![timer-countdown](https://user-images.githubusercontent.com/62816754/140630210-f509a779-5d47-4711-8a34-66af2e9bfef2.gif)
+![game-result]()
   
 
 When the game has ended, it will time-out and the user can play again. 
-![scroll](https://user-images.githubusercontent.com/62816754/140630234-ffb34e54-4c87-493b-828c-5efdcc9d9645.gif)
+![play-again]()
 
 User can choose to play a different game.   
-![error](https://user-images.githubusercontent.com/62816754/140630311-2bc7650e-8424-4a40-87a9-639aed3c1ed1.gif)
+![choose-game]()
 
 User can reset their score to 0, and start over. 
+![reset-score]
 
 ## Links
 Feel free to play a few rounds. [here](https://github.com/Alynn022/Mod1FinalProject)  
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
+
+## Challenges 
+
+## Wins 
   
 ## Future Additions
 - Add functionality for showing the user's past input and win/loss against cpu.  
