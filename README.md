@@ -41,6 +41,7 @@ User can reset their score to 0, and start over at home view.
 ![reset-score](https://media.giphy.com/media/jlQmMWjI3VF9ZaZNyY/giphy.gif)
 
 ## Links  
+Play a few rounds [here](https://alynn022.github.io/Mod1FinalProject/)
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
 
 ## Challenges 
